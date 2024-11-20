@@ -27,7 +27,7 @@ jobs:
         run: npm test
 
   deploy:
-    # runs-on: ubuntu-latest
+    runs-on: ubuntu-latest
     needs: build-test
     if: success()  # Ensures it only runs if the previous job succeeded
     steps:
