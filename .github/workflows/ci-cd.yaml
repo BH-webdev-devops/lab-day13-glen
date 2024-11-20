@@ -31,6 +31,8 @@ jobs:
     needs: build-test
     if: success()  # Ensures it only runs if the previous job succeeded
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
       - name: Deploy to Vercel
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
